@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/icons"
 import { GiTechnoHeart } from "react-icons/gi"
 
+// eslint-disable-next-line react/prop-types
 const NavLink = ({ path, children}) => (
   <Link 
     as={ReactLink} 
