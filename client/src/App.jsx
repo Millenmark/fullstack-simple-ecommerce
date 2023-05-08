@@ -1,11 +1,12 @@
 import {Routes, Route} from "react-router-dom"
+import { Navbar } from "./components"
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Navbar />
     </>
   )
 }
