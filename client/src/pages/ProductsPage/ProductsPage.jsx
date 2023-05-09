@@ -8,7 +8,7 @@ const ProductsPage = () => {
       {
         products.map((product, index) => (
           <WrapItem key={index}>
-            <Center w={"250px"} h={"550px"} border={"2px solid white"}>
+            <Center w={"250px"} h={"550px"}>
               <ProductCard product={product}/>
             </Center>
           </WrapItem>
