@@ -5,7 +5,7 @@ const connectToDatabase = async () => {
   console.log(process.env.MONGO_URI)
 
   try {
-    //mongoose.set("strictQuery", false) use this if you have multiple versions of the mongodb and it's giving you errors
+    //mongoose.set("strictQuery", false) use this if you have multiple versions of the mongodb and if it's giving you errors
     const connect = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true
