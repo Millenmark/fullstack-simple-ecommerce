@@ -13,11 +13,11 @@ import {
   HStack,
   Link,
   Text,
-} from "@chakra-ui/react"
-import {FiShoppingCart} from "react-icons/fi"
-import { Link as ReactLink} from "react-router-dom"
-import { StarIcon } from "@chakra-ui/icons"
-import { useState } from "react"
+} from "@chakra-ui/react";
+import { FiShoppingCart } from "react-icons/fi";
+import { Link as ReactLink } from "react-router-dom";
+import { StarIcon } from "@chakra-ui/icons";
+import { useState } from "react";
 
 const Rating = ({ rating, numberOfReviews }) => {
   const [iconSize, setIconSize] = useState("14px");
@@ -53,7 +53,7 @@ const Rating = ({ rating, numberOfReviews }) => {
   );
 };
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
   return (
     <Stack
       p={"2"}
@@ -155,6 +155,6 @@ const ProductCard = ({product}) => {
       </Flex>
     </Stack>
   );
-}
+};
 
-export default ProductCard
+export default ProductCard;
