@@ -13,9 +13,18 @@ import {
   AlertDescription,
   Wrap,
 } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import { Link as ReactLink } from "react-router-dom";
 
 const CartPage = () => {
+  const cartInfo = useSelector((state) => state.cart);
+  const { loading, error, cart } = cartInfo;
+
+  const getHeadingContent = () =>
+    cart.length === 1 ? "(1 Item)" : `(${cart.length} Items)`;
+
+  const color = useColorModeValue("orange.500", "orange.200");
+
   return (
     <Wrap spacing={"2"} justify={"center"} minHeight={"100vh"}>
       {loading ? (
@@ -52,7 +61,28 @@ const CartPage = () => {
           px={{ base: "4", md: "8", lg: "12" }}
           py={{ base: "6", md: "8", lg: "12" }}
         >
-          <Stack></Stack>
+          <Stack
+            direction={{ base: "column", lg: "row" }}
+            align={{ lg: "flex-start" }}
+            spacing={{ base: "8", lg: "16" }}
+          >
+            <Stack spacing={{ base: "column", md: "10" }} flex={"2"}>
+              <Heading fontSize={"2xl"} fontWeight={"extrabold"}>
+                Shopping cart {getHeadingContent()}
+              </Heading>
+
+              <Stack spacing={"6"}>Cart Item</Stack>
+            </Stack>
+            <Flex direction={"column"} align={"center"} flex={"1"}>
+              CartOrderSummary
+              <HStack mt={"6"} fontWeight={"semibold"}>
+                <p>or</p>
+                <Link as={ReactLink} to={"/products"} color={color}>
+                  Continue Shopping
+                </Link>
+              </HStack>
+            </Flex>
+          </Stack>
         </Box>
       )}
     </Wrap>
