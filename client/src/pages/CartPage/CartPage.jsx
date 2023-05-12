@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { Link as ReactLink } from "react-router-dom";
+import { CartItem } from "../../components";
 
 const CartPage = () => {
   const cartInfo = useSelector((state) => state.cart);
@@ -71,7 +72,11 @@ const CartPage = () => {
                 Shopping cart {getHeadingContent()}
               </Heading>
 
-              <Stack spacing={"6"}>Cart Item</Stack>
+              <Stack spacing={"6"}>
+                {cart.map((cartItem) => (
+                  <CartItem  key={cartItem.id} cartItem={cartItem}/>
+                ))}
+              </Stack>
             </Stack>
             <Flex direction={"column"} align={"center"} flex={"1"}>
               CartOrderSummary
