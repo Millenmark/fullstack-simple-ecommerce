@@ -50,8 +50,8 @@ const CartItem = ({ cartItem }) => {
           maxW={"64px"}
           focusBorderColor={mode("orange.500", "orange.200")}
           value={qty}
-          onClick={(e) => {
-            dispatch(id, e.target.value);
+          onChange={(e) => {
+            dispatch(addNewCartItem(id, e.target.value));
           }}
         >
           {[...Array(stock).keys()].map((x) => (
@@ -61,7 +61,7 @@ const CartItem = ({ cartItem }) => {
           ))}
         </Select>
         <Text fontWeight={"bold"}>${price}</Text>
-        <CloseButton />
+        <CloseButton  />
       </Flex>
     </Flex>
   );
