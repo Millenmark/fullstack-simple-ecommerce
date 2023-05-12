@@ -46,7 +46,14 @@ const CartPage = () => {
           </AlertDescription>
         </Alert>
       ) : (
-        <p>Display for now</p>
+        <Box
+          maxW={{ base: "3xl", lg: "7xl" }}
+          mx={"auto"}
+          px={{ base: "4", md: "8", lg: "12" }}
+          py={{ base: "6", md: "8", lg: "12" }}
+        >
+          <Stack></Stack>
+        </Box>
       )}
     </Wrap>
   );
